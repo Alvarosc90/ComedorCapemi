@@ -1,0 +1,139 @@
+/* Contenedor principal */
+.consultar-pedidos-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: black;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título */
+  .consultar-pedidos-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  /* Contenedor de búsqueda */
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .search-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-container .login__button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-container .login__button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Tabla de pedidos */
+  .pedidos-table-container {
+    overflow-x: auto;
+  }
+  
+  .pedidos-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pedidos-table thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pedidos-table th,
+  .pedidos-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .pedidos-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .pedidos-table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  .pedidos-table button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .pedidos-table button:hover {
+    background-color: #218838;
+  }
+  
+  .pedidos-table button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .pedidos-table button.realizado {
+    background-color: #dc3545; /* Color rojo */
+    border: none;
+    color: white;
+  }
+  
+  .pedidos-table button.realizado:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+  }
+  
+  .delete-all-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .delete-all-btn:hover {
+    background-color: darkred;
+  }
+  
+  .home-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  .home-btn:hover {
+    background-color: darkgreen;
+  }
+  

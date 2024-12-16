@@ -1,0 +1,165 @@
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor Principal */
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  position: relative;
+  background-image: url('/fondo.jpg');
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  filter: brightness(1); /* Ajusta el brillo para mejorar la legibilidad */
+}
+
+.logintitle__h1{
+  color: white;
+}
+
+/* Título */
+.login__title1 {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para mejorar contraste */
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.login__title2 {
+  text-align: center;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Títulos de Login */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00B0FF; /* Celeste */
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Mensaje de Error */
+.login__error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Contenedor de Botones de Acceso */
+.login__access-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para cada botón */
+.login__button {
+  padding: 10px 20px;
+  background-color: #00B0FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px; /* No ocupa todo el ancho */
+  margin: 0 auto; /* Centrado */
+}
+
+.login__button:hover {
+  background-color: #0099cc;
+}
+
+/* Estilos del Formulario */
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilos para los grupos de formulario */
+.login__form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+/* Estilo de los inputs */
+.login__input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+.login__input:focus {
+  outline: none;
+  border-color: #00B0FF;
+}
+
+/* Estilo del botón de Submit */
+.login__submit-button {
+  padding: 12px 20px;
+  background-color: #00B0FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px; /* No ocupa todo el ancho */
+  margin: 0 auto; /* Centrado */
+}
+
+.login__submit-button:hover {
+  background-color: #0099cc;
+}
+
+.CAPEMI{
+  position: relative;
+  width: 60%;
+}
+
+.fondocapemi2 {
+  position: absolute;
+  top: 50%; /* Coloca el elemento en el 50% desde el top del contenedor */
+  left: 30%; /* Coloca el elemento en el 50% desde el left del contenedor */
+  transform: translate(-50%, -50%); /* Ajusta la posición para que el centro del elemento esté en el centro del contenedor */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); /* Sombra blanca */
+}
+.fondocapemi3 {
+  position: absolute;
+  top: 50%; /* Coloca el elemento en el 50% desde el top del contenedor */
+  left: 70%; /* Coloca el elemento en el 50% desde el left del contenedor */
+  transform: translate(-50%, -50%) scaleX(-1); /* Ajusta la posición y gira la imagen horizontalmente */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); /* Sombra blanca */
+}

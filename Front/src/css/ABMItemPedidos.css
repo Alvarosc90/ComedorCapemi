@@ -1,0 +1,133 @@
+.abm-pedidos-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: url('/fondo.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-position: center; /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+  .abm-item-pedidos__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los inputs horizontalmente */
+    gap: 10px; /* Espaciado más pequeño entre los inputs */
+    margin-bottom: 20px;
+}
+
+.abm-item-pedidos__input {
+    width:300px; /* Cambia el tamaño del input (ajústalo según lo necesites) */
+    max-width: 300px; /* Limita el ancho máximo del input */
+    padding: 8px; /* Reduce el padding interno */
+    display: flex;
+    font-size: 18px; /* Reduce el tamaño del texto */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.abm-item-pedidos__button {
+    width: 80%; /* Asegura que el botón coincida con los inputs */
+    max-width: 300px;
+    padding: 8px 12px; /* Reduce el tamaño del botón */
+    background-color: #0056D2;
+    font-size: 14px; /* Ajusta el texto */
+}
+  
+  .abm-item-pedidos__button:hover {
+    background: linear-gradient(90deg, #0056D2, #007BFF);
+  }
+  .abm-item-pedidos__list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro de la lista */
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas si es necesario */
+}
+
+.abm-item-pedidos__list-item {
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+    max-width: 180px; /* Reduce el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white; /* Asegura que el texto sea visible sobre fondo negro */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el texto dentro de cada ítem de la lista */
+}
+
+.abm-item-pedidos__list-button {
+    padding: 5px 10px;
+    margin: 5px 0; /* Asegura un pequeño espacio entre botones */
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%; /* Asegura que los botones ocupen todo el ancho disponible dentro del item */
+}
+  
+  .abm-item-pedidos__list-button:hover {
+    background: linear-gradient(90deg, #218838, #28a745);
+  }
+  
+  .abm-item-pedidos__delete-button {
+    background: linear-gradient(90deg, #dc3545, #c82333);
+  }
+  
+  .abm-item-pedidos__delete-button:hover {
+    background: linear-gradient(90deg, #c82333, #dc3545);
+  }
+  
+  .abm-pedidos-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.abm-item-pedidos__label {
+  font-weight: bold; /* Texto en negrita */
+  font-size: 20px;
+  color: #000000; /* Asegura que el texto sea visible */
+  text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff; /* Simula un borde negro alrededor del texto */
+}
+
+.abm-item-pedidos__h2{
+  font-weight: bold; /* Texto en negrita */
+  font-size: 30px;
+  color: #000000; /* Asegura que el texto sea visible */
+  text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff; /* Simula un borde negro alrededor del texto */
+}
+
+.abm-item-pedidos__home-button {
+  background-color: #007BFF; /* Color de fondo azul */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde por defecto */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cambia el cursor al estilo de puntero */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.abm-item-pedidos__home-button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Agrandar ligeramente el botón */
+}
+
+.abm-item-pedidos__home-button:active {
+  background-color: #004085; /* Azul aún más oscuro al hacer clic */
+  transform: scale(0.95); /* Encoge ligeramente el botón al presionar */
+}

@@ -1,0 +1,144 @@
+.menu-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('/fondo.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-position: center; /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border: 3px solid rgba(255, 255, 255, 0.8); /* Borde blanco decente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto */
+  color: white; /* Cambia el color del texto a blanco para visibilidad */
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  background-color: #f0f0f0c2;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 158px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  background-color: #000000bb; /* Fondo con transparencia */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra predeterminada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8); /* Sombra blanca */
+}
+
+
+.menu-item h3 {
+  font-size: 1.5rem;
+  color: rgb(223, 223, 223); /* Usando el color azul para los títulos */
+  margin-bottom: 10px;
+}
+
+.menu-item p {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #4CAF50; /* Color verde para el precio */
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.quantity {
+  margin-top: 15px;
+}
+
+.quantity label {
+  font-size: 1rem;
+  color: rgb(255, 255, 255); /* Azul para las etiquetas */
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 123, 255, 0.5); /* Azul suave para los bordes */
+  outline: none;
+  transition: border 0.3s ease;
+  
+}
+
+.quantity-input:focus {
+  border-color: rgba(0, 123, 255, 1); /* Resalta el borde en azul al enfocar */
+}
+.solicitar-button,
+.cancelar-button {
+  display: block; /* Asegura que el botón sea un bloque para que ocupe todo el ancho disponible */
+  width: 100%;
+  max-width: 250px; /* Tamaño mediano: máximo de 250px */
+  padding: 12px; /* Añadí un poco más de padding para mejorar la apariencia */
+  font-size: 1.1rem; /* Ajuste de tamaño de texto para hacerlo mediano */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px auto; /* Centra los botones y añade un margen arriba y abajo */
+}
+
+.solicitar-button {
+  background-color: rgb(4, 44, 87); /* Azul brillante */
+}
+
+.cancelar-button {
+  background-color: red; /* Rojo para el botón de cancelar */
+}
+
+button:hover {
+  background-color: rgb(0, 0, 0); /* Azul oscuro al pasar el mouse */
+}
+
+.cancelar-button:hover {
+  background-color: #e53935; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-container {
+    padding: 15px;
+  }
+
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
