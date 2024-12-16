@@ -22,20 +22,23 @@ function Login() {
     // Redirigir directamente si se seleccionó "consulta"
     if (type === 'consulta') {
       navigate('/consulta');
+    } else if (type === 'abm') {
+      // Redirigir a cargar producto sin login
+      navigate('/abm-item-pedidos');
     }
   };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    // Validación básica para "abm", pero no para "menu" ni "consulta"
-    if ((accessType === 'abm' && !legajo) || (accessType === 'menu' && !legajo)) {
+    // Validación básica para "menu"
+    if (accessType === 'menu' && !legajo) {
       setError('Por favor, ingresa tu legajo');
       return;
     }
 
-    // Si es ABM, también validamos la contraseña
-    if (accessType === 'abm' && !password) {
+    // Si es "menu", validamos también la contraseña
+    if (accessType === 'menu' && !password) {
       setError('Por favor, ingresa tu contraseña');
       return;
     }
@@ -45,10 +48,7 @@ function Login() {
       let payload = { legajo };
 
       // Determinar el endpoint y el payload según el tipo de acceso
-      if (accessType === 'abm') {
-        endpoint = '/login/password';
-        payload.password = password;
-      } else if (accessType === 'menu') {
+      if (accessType === 'menu') {
         endpoint = '/login/legajo';
       }
 
@@ -59,9 +59,7 @@ function Login() {
   
         login(user.legajo, user.nombre, user.apellido);
         localStorage.setItem('token', token); // Almacenar el token
-        navigate(
-          accessType === 'menu' ? '/menu' : '/abm-item-pedidos'
-        );
+        navigate('/menu');
       } else {
         setError('Credenciales incorrectas');
       }
@@ -95,7 +93,7 @@ function Login() {
         </div>
 
         {/* Solo mostrar formulario si no es 'consulta' */}
-        {(accessType === 'menu' || accessType === 'abm') && (
+        {(accessType === 'menu') && (
           <form className="login__form" onSubmit={handleLoginSubmit}>
             <div className="login__form-group">
               <label className="login__label">Legajo:</label>
@@ -108,22 +106,8 @@ function Login() {
               />
             </div>
 
-            {accessType === 'abm' && (
-              <div className="login__form-group">
-                <label className="login__label">Contraseña:</label>
-                <input
-                  className="login__input"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Ingresa tu contraseña"
-                />
-              </div>
-            )}
-
             <button className="login__submit-button" type="submit">
-              {accessType === 'consulta' ? 'Consultar Pedidos' :
-                accessType === 'menu' ? 'Ir al Menú' : 'Acceder'}
+              Ir al Menú
             </button>
           </form>
         )}

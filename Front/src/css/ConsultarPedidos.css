@@ -1,4 +1,20 @@
 /* Contenedor principal */
+.container_main{
+
+  padding: 20px;
+  height: 100vw;
+  max-height: 100vw;
+  max-width: 100%;
+  margin: 0 auto;
+  background-image: url('/fondo.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-position: center; /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border: 3px solid rgba(255, 255, 255, 0.8); /* Borde blanco decente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto */
+}
+
 .consultar-pedidos-container {
     max-width: 800px;
     margin: 0 auto;
@@ -7,6 +23,7 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
   }
   
   /* Título */
@@ -137,3 +154,173 @@
     background-color: darkgreen;
   }
   
+  /* Contenedor de los pedidos */
+.consultar-pedidos-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.consultar-pedidos-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Resumen de pedidos (cantidad de ítems y etiquetas) */
+.pedido-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pedido-summary p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* Estilo para las etiquetas de cantidad de pedidos */
+.pedido-summary p {
+  background-color: #f3f4f6; /* Fondo gris claro */
+  color: #333;  /* Texto oscuro */
+  padding: 8px 16px;
+  border-radius: 10px; /* Borde redondeado */
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d1d5db; /* Borde sutil */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pedido-summary p strong {
+  color: #0078d4; /* Resaltar el tipo de pedido con azul */
+}
+
+/* Efecto hover en etiquetas */
+.pedido-summary p:hover {
+  transform: scale(1.05); /* Agrandar un poco en hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumentar la sombra en hover */
+}
+
+/* Estilo para la búsqueda por legajo */
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #0078d4;
+}
+
+/* Estilo para la tabla de pedidos */
+.pedidos-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.pedidos-table th {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+.pedidos-table tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.pedidos-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.pedidos-table td {
+  font-size: 14px;
+}
+
+/* Botones personalizados */
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buttons-container button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons-container button:hover {
+  background-color: #005a9e;
+  transform: translateY(-2px);
+}
+
+.buttons-container button:active {
+  background-color: #00457a;
+  transform: translateY(0);
+}
+
+/* Estilo para los botones de acciones (realizado/no realizado) */
+.pedidos-table button.realizado {
+  background-color: #28a745;
+}
+
+.pedidos-table button.realizado:hover {
+  background-color: #218838;
+}
+
+.pedidos-table button {
+  background-color: #dc3545;
+}
+
+.pedidos-table button:hover {
+  background-color: #c82333;
+}
+
+.pedidos-table button:focus {
+  outline: none;
+}
+
+.buttons-container__clean{
+  background-color: #c82333 !important;
+}
+
+.buttons-container__clean:hover{
+  background-color: #ff4e5f !important;
+}
