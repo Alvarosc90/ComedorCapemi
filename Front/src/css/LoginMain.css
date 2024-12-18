@@ -1,0 +1,103 @@
+/* Estilos para el formulario de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    position: relative;
+    background-image: url('/fondo.jpg'); /* La imagen de fondo permanece */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    filter: brightness(0.8); /* Reduce el brillo para mejorar la legibilidad */
+  }
+  
+  /* Estilo del formulario de login */
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.74);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Título */
+  .login-form h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de los mensajes de error */
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo de los inputs y sus contenedores */
+  .form___login div {
+    margin-bottom: 20px;
+  }
+  
+  .form___login label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #34495e;
+  }
+  
+  /* Estilo de los inputs */
+  .form___login input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para el campo de la contraseña */
+  .password-field {
+    display: flex;
+    flex-direction: column; /* Organiza el input y el ícono en una columna */
+    align-items: center;
+    width: 100%;
+  }
+  
+  .password-field input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .eye-icon {
+    margin-top: 10px; /* Da espacio entre el input y el ícono */
+    cursor: pointer;
+    color: #3498db;
+    font-size: 20px;
+    align-self: flex-end; /* Alinea el ícono a la derecha */
+  }
+  
+  /* Estilo del botón de submit */
+  .button__login {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+ .button__login:hover {
+    background-color: #2980b9;
+  }
+  

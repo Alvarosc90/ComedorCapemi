@@ -1,5 +1,4 @@
 //loginController.js
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');  // Asegúrate de importar tu modelo de usuario
 
@@ -56,14 +55,38 @@ exports.loginWithLegajoPassword = async (req, res) => {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
+    // Verificar si el rol es admin
+    if (user.role !== 'admin') {
+      return res.status(403).json({ message: 'Acceso denegado. Solo los administradores pueden iniciar sesión.' });
+    }
+
+    // Verificar la contraseña
     if (user.password !== password) {
       return res.status(401).json({ message: 'Credenciales incorrectas' });
     }
 
-    res.json({ success: true, message: 'Login exitoso', user });
+    // Crear el token si la autenticación es exitosa
+    const token = jwt.sign(
+      { userId: user.id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: '1h' }
+    );
+
+    res.json({
+      success: true,
+      message: 'Login exitoso',
+      user: {
+        id: user.id,
+        nombre: user.nombre,
+        legajo: user.legajo,
+        apellido: user.apellido,
+      },
+      token,
+    });
   } catch (error) {
     console.error('Error en el backend:', error);
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 

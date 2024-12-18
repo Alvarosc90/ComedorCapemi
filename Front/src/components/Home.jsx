@@ -1,64 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../axiosConfig';  // Importa la configuración de axios
-import "../css/Login.css";
+import "../css/home.css";
 import { useUser } from '../../context/UserContext';
 
-function Login() {
+function Home() {
   const [legajo, setLegajo] = useState('');
-  const [password, setPassword] = useState('');
-  const [accessType, setAccessType] = useState('');
   const [error, setError] = useState('');
-
+  const [accessType, setAccessType] = useState('');
   const navigate = useNavigate();
-  const { login } = useUser();
+  
+  const { login, logout } = useUser();
+  
+  const [showLoginForm, setShowLoginForm] = useState(false);
+
+  useEffect(() => {
+    // Redirigir a /login si no hay token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const handleAccessTypeChange = (type) => {
-    setAccessType(type);
     setError('');
     setLegajo('');
-    setPassword('');
+    setAccessType(type);
 
-    // Redirigir directamente si se seleccionó "consulta"
-    if (type === 'consulta') {
-      navigate('/consulta');
-    } else if (type === 'abm') {
-      // Redirigir a cargar producto sin login
-      navigate('/abm-item-pedidos');
+    if (type === 'menu') {
+      setShowLoginForm(true);
+    } else {
+      setShowLoginForm(false);
+      if (type === 'consulta') {
+        navigate('/consulta');
+      } else if (type === 'abm') {
+        navigate('/abm-item-pedidos');
+      }
     }
   };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    // Validación básica para "menu"
-    if (accessType === 'menu' && !legajo) {
+    if (!legajo) {
       setError('Por favor, ingresa tu legajo');
       return;
     }
 
-    // Si es "menu", validamos también la contraseña
-    if (accessType === 'menu' && !password) {
-      setError('Por favor, ingresa tu contraseña');
-      return;
-    }
-
     try {
-      let endpoint = '';
-      let payload = { legajo };
-
-      // Determinar el endpoint y el payload según el tipo de acceso
-      if (accessType === 'menu') {
-        endpoint = '/login/legajo';
-      }
-
-      const response = await axios.post(endpoint, payload);
+      const payload = { legajo };
+      const response = await axios.post('/login/legajo', payload);
 
       if (response.data.success) {
         const { user, token } = response.data;
-  
+        
         login(user.legajo, user.nombre, user.apellido);
-        localStorage.setItem('token', token); // Almacenar el token
+        localStorage.setItem('token', token);
+
         navigate('/menu');
       } else {
         setError('Credenciales incorrectas');
@@ -68,6 +66,15 @@ function Login() {
       const errorMsg = err.response?.data?.message || err.message || 'Error de conexión';
       setError(`Error del servidor: ${errorMsg}`);
     }
+  };
+
+  const handleLogout = () => {
+    // Limpiar los datos de localStorage
+    localStorage.removeItem('token');
+    // Limpiar el contexto de usuario
+    logout();
+    // Redirigir a la página de login
+    navigate('/login');
   };
 
   return (
@@ -92,8 +99,7 @@ function Login() {
           </button>
         </div>
 
-        {/* Solo mostrar formulario si no es 'consulta' */}
-        {(accessType === 'menu') && (
+        {showLoginForm && (
           <form className="login__form" onSubmit={handleLoginSubmit}>
             <div className="login__form-group">
               <label className="login__label">Legajo:</label>
@@ -111,9 +117,13 @@ function Login() {
             </button>
           </form>
         )}
+
+        <button className="logout-button" onClick={handleLogout}>
+          Cerrar sesión
+        </button>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Home;
